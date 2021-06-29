@@ -1,0 +1,65 @@
+<ion-menu side="start" menuId="first" contentId="main">
+  <ion-header>
+    <ion-toolbar >
+      <ion-title class="ion-text-center"> Menu principal</ion-title>
+    </ion-toolbar>
+    <img src="/assets/Imgs/images.jfif" alt="">
+  </ion-header>
+
+  <ion-content> 
+    <ion-menu-toggle auto-hide="true">
+    
+      <ion-list  >
+
+        <ion-menu-toggle auto-hide="false" *ngFor="let p of tab">
+          <ion-item [routerDirection]="'forward'" [routerLink]="[p.url]">
+            <ion-icon slot="start" [name]="p.icon"></ion-icon>
+            <ion-label>
+              {{p.Nom}}
+            </ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+      <ion-grid>
+        <ion-row>
+          <ion-col    routerLinkActive="router-link-active"   col-6>
+            <ion-card  text-center padding color="danger">
+              
+              <ion-icon size="large" name="link">              <h2>Justice</h2>
+              </ion-icon>
+          <h2  ><a href="#" onclick="window.open('https://www.justice.gov.bf/', '_system', 'location=yes');" >Click Me</a> </h2>
+            </ion-card>
+          </ion-col>
+          <ion-col col-6>
+            <ion-card text-center padding color="success">
+              <ion-icon size="large" name="people"></ion-icon>
+              <h2>Contact</h2>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+  
+          <ion-col class="ion-icon-center" col-6>
+            <ion-card text-center padding color="warning">
+              <ion-icon size="large" name="settings"></ion-icon>
+              <h2>Settings</h2>
+            </ion-card>
+          </ion-col>
+  
+          <ion-col col-6>
+            <ion-card text-center padding color="primary">
+              <ion-icon size="large" name="map"></ion-icon>
+              <h2>Carte</h2>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+        </ion-row>
+      </ion-grid>
+       
+      </ion-menu-toggle>
+  </ion-content>
+</ion-menu>
+<!-- Appel du menu -->
+<ion-router-outlet id="main"></ion-router-outlet>
+

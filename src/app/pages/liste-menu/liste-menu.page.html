@@ -1,0 +1,30 @@
+<ion-header translucent>
+  <ion-toolbar color="warning">
+    <ion-buttons slot="start" (click)="openMenu()">
+<ion-icon name="menu" size="large" > </ion-icon>
+    </ion-buttons>
+    <ion-title>Menu Fontionalités</ion-title>
+  </ion-toolbar>
+  <ion-searchbar color="medium" (ionInput)="FilterJSONData($event)" ></ion-searchbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+ 
+  
+  <ion-card   [routerDirection]="'forward'" [routerLink]="[M.url]" *ngFor="let M of tab" >
+    <img src="{{M.Image}}" >
+    <ion-card-header>
+      <ion-card-subtitle>{{M.Nom}}</ion-card-subtitle>
+      <ion-card-title>{{M.Nom}}</ion-card-title>
+    </ion-card-header>
+    <ion-item>
+      <ion-icon name="pin" slot="start"></ion-icon>
+      <ion-label></ion-label>
+      <ion-button fill="outline" slot="end">View</ion-button>
+    </ion-item>
+    <ion-card-content>
+     {{ M.Description}}
+    </ion-card-content>
+  </ion-card>
+ 
+</ion-content>
